@@ -111,6 +111,11 @@ Use the higher order function getAverageGoals to do the following:
 */
 
 function getAverageGoals(finalsArray) {
+    // hahaha this looks like hell, but here's what's happening:
+    // 1. I reduce the finals array to the total number of goals with the home and away teams
+    // 2. I divide that number by the length of the finals array, giving me the average
+    // 3. I round the average * 100, and then divide by 100 (JS way of rounding to two decimals)
+    // 4. I then parse the whole kit and kaboodle to a string because that's what the tests are expecting
    return (Math.round(finalsArray.reduce((acc, item) => acc + (item["Home Team Goals"] + item["Away Team Goals"]), 0)/finalsArray.length * 100) / 100).toString();
 }
 
